@@ -1,21 +1,29 @@
 window.onload = function(){
 	var canvas = document.createElement("canvas");
 	canvas.id = "canvas"
+	canvas.style.position = "absolute";
+	canvas.style.left = "0px";
+	canvas.style.top = "0px";
+	canvas.style.zIndex = "1000000";
+	canvas.style.pointerEvents = "none";
 
 
-	
+	var body = document.body;
+    var html = document.documentElement;
 
 	var W = window.innerWidth;
-	var H = window.innerHeight;
+	var H = Math.max(body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight);
+
 	canvas.width = W;
 	canvas.height = H;
 
-	var body = document.getElementsByTagName("body")[0];
+	
 	body.appendChild(canvas);
 
 	var ctx = canvas.getContext("2d");
 
-	var mp = 40; //max snowflakes
+	var mp = 100; //max snowflakes
 	var particles = [];
 
 	for(var i=0; i<mp; i++){
