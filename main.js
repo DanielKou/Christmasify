@@ -1,4 +1,17 @@
 window.onload = function(){
+//    var snow = 0;
+//    var start;
+//  
+//    var checkPageButton = document.getElementById("button");
+//    checkPageButton.addEventListener('click', function() {
+//      snow++;
+//      snow = snow%2;
+//      
+//      if(snow == 1) start = setInterval(draw, 33);
+//      else clearInterval(start);
+//    });
+  
+  
 	var canvas = document.createElement("canvas");
 	canvas.id = "canvas"
 	canvas.style.position = "absolute";
@@ -34,7 +47,6 @@ window.onload = function(){
 			d: Math.random()*mp //falling speed
 		})
 	}
-
 
 	function draw(){
 		ctx.clearRect(0,0,W,H);
@@ -75,9 +87,6 @@ window.onload = function(){
 			}
 		}
 	}
-
-	setInterval(draw, 33);
-
-
-
+  setInterval(draw, 33);
+	
 }

@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+ 
+  "name": "Christmasify",
+  "description": "This extension will animate snowfall",
+  "version": "1.0",
+  "icons":{"16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png"},
+  "background": {
+    "scripts": ["background.js"]
+  },
+ 
+  "browser_action": {
+   "default_icon": "icon16.png",
+   "default_popup": "popup.html"
+  },
+  "content_scripts":[
+    {
+      "matches":["<all_urls>"],
+      "js":["main.js"]
+    }
+  ]
+}
