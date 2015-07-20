@@ -2,7 +2,8 @@
   "manifest_version": 2,
  
   "name": "Christmasify",
-  "description": "This extension will animate snowfall",
+  "short_name": "Christmasify",
+  "description": "Click the icon to get some snowy goodness!",
   "version": "1.0",
   "icons":{"16": "icon16.png",
            "48": "icon48.png",
@@ -12,8 +13,7 @@
   },
  
   "browser_action": {
-   "default_icon": "icon16.png",
-   "default_popup": "popup.html"
+   "default_icon": "icon16.png"
   },
   "content_scripts":[
     {
