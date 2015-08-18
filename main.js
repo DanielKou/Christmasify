@@ -1,9 +1,11 @@
 window.onload = function(){
   var start = 0;
   var animation;
-  
-  //make canvas
-  var canvas = document.createElement("canvas");
+  var W;
+  var H;
+  var canvas;
+
+  canvas = document.createElement("canvas");
   canvas.id = "canvas"
   canvas.style.position = "absolute";
   canvas.style.left = "0px";
@@ -11,20 +13,20 @@ window.onload = function(){
   canvas.style.zIndex = "10000";
   canvas.style.pointerEvents = "none";
 
-
-  var body = document.body;
-  var html = document.documentElement;
-
-  var W = window.innerWidth;
-  var H = Math.max(body.scrollHeight, body.offsetHeight, 
-                   html.clientHeight, html.scrollHeight, html.offsetHeight);
-
-  canvas.width = W;
-  canvas.height = H;
-
+  //make canvas
+  function make_canvas(){
+    var body = document.body;
+    var html = document.documentElement;
   
-  body.appendChild(canvas);
-
+    W = parseInt(window.innerWidth) - 17;
+    H = Math.max(body.scrollHeight, body.offsetHeight, 
+                     html.clientHeight, html.scrollHeight, html.offsetHeight);
+    canvas.width = W;
+    canvas.height = H;
+  }
+  
+  make_canvas();
+  document.body.appendChild(canvas);
   var ctx = canvas.getContext("2d");
 
   var mp = 500; //max snowflakes
